@@ -70,7 +70,7 @@ my-whatsapp-visualizer/
 
 The image will be installed the first time you start docker-compose, but you can also do it manually:
 ```bash
-docker pull TODO
+docker pull ghcr.io/theopfr/whatsapp-group-visualized:latest
 ```
 
 Or build it manually if you cloned the repo:

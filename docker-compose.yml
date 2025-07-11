@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   wa-group-viz:
-    image: wa-group-viz
+    image: ghcr.io/theopfr/whatsapp-group-visualized:latest
     ports:
       - "8050:8050"
     volumes:
