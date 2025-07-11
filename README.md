@@ -22,11 +22,9 @@ Supported plots:
 ---
 
 ## 🧑‍💻 Data Extraction
-Before using this tool, you'll need to:
-1. Export your WhatsApp group chat data.
-2. Format it for use with the dashboard.
+Before using this tool, you'll need to export your WhatsApp group chat data.
 
-See the [DATA_EXTRACTION.md guide](./DATA_EXTRACTION.md) for full instructions. You will end up with a single .csv file.
+See the [DATA_EXTRACTION.md](./DATA_EXTRACTION.md) guide for full instructions. You will end up with a single .csv file.
 
 ---
 
@@ -67,12 +65,17 @@ Your folder structure then should look like:
 my-whatsapp-visualizer/
 ├── data/
 │   └── config.json
-├── docker-compose.yml
+└── docker-compose.yml
 ```
 
 The image will be installed the first time you start docker-compose, but you can also do it manually:
 ```bash
 docker pull TODO
+```
+
+Or build it manually if you cloned the repo:
+```bash
+docker build -t wa-group-viz .
 ```
 
 ---
