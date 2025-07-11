@@ -17,7 +17,7 @@ A simple Plotly dashboard for visualizing your WhatsApp group chat patterns.
   <img src="./examples/activity.png" />
 </p>
 
-*See more plots in the [`examples`](./examples) folder.*
+You can find an image of the full dashboard [here](./examples/full-dashboard.png).
 
 ---
 
