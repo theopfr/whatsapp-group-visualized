@@ -106,8 +106,9 @@ docker-compose up
 
 Then open http://localhost:8050 in your browser.
 
+---
 
-## Sentiment Analysis
+## ❤️ Sentiment Analysis
 Supported languages: English and German. If you chat in another language these plots won't make much sense unfortunately but you can enhance this script to support your lanuage if possible (for example using HuggingFace models).
 
 In order to show plots regarding sentiment, you need to run the ``src/sentiment_analysis.py`` script on your ``data/group-chat.csv``.
