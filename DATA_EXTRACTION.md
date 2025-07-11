@@ -11,7 +11,6 @@ The following steps were copied and modified from [this guide](https://gist.gith
    - If backup encryption is **disabled**, proceed to Step 4.
    - If encryption with a **password** is enabled, disable it and proceed to Step 4.
    - If encryption with a **64-digit encryption key** is enabled and you **don’t know the key**, disable it and proceed to Step 4.
-   - If encryption with a **64-digit encryption key** is enabled and you **know the key**, proceed to Step 5.
 4. **Enable Backup Encryption**:
    - Choose to use a **64-digit encryption key**.
    - After the key is generated, **take note of it**, as it will be needed later.
@@ -34,7 +33,7 @@ In this step you will locate the actual group chat within your `msgstore.db` fil
 - Open your `msgstore.db` file.
 - Open the `chat` table and filter for your group's name in the "subject" column.
 - Once found, take note of the `_id` column — this is the group chat's ID on your phone.
-- Open the `messages` table and filter the `chat_row_id` column for the `_id` of your group chat.
+- Open the `message` table and filter the `chat_row_id` column for the `_id` of your group chat.
 - You should now only see messages from that group. Click the "Save table as currently displayed" icon and export to CSV.
 
 Done!
