@@ -1,0 +1,1 @@
+_id,chat_row_id,from_me,key_id,sender_jid_row_id,status,broadcast,recipient_count,participant_hash,origination_flags,origin,timestamp,received_timestamp,receipt_server_timestamp,message_type,text_data,starred,lookup_tables,message_add_on_flags,sort_id,view_mode,translated_text,sentiment,score
