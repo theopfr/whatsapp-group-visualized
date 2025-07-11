@@ -13,8 +13,8 @@ A simple Plotly dashboard for visualizing your WhatsApp group chat patterns.
 - Media usage stats
 
 <p align="center">
-  <img src="./examples/example1.png" />
-  <img src="./examples/example2.png" />
+  <img src="./examples/message-counts.png" />
+  <img src="./examples/activity.png" />
 </p>
 
 *See more plots in the [`examples`](./examples) folder.*
