@@ -1,0 +1,21 @@
+{
+    "groupName": "WhatsApp Group Name",
+    "jidMap": {
+        "84": "Heisenberg",
+        "25": "Galileo",
+        "28": "Einstein",
+        "0": "Curie",
+        "62": "Newton"
+    },
+    "other": ["Dirac", "Bohr"],
+    "excludeOther": true,
+    "senderAliases": {
+        "Heisenberg": ["Werner", "Heisi", "0123456789"],
+        "Galileo": ["Galilei", "0123456789"],
+        "Einstein": ["Albert", "Einisteini", "0123456789"],
+        "Curie": ["Marie", "0123456789"],
+        "Newton": ["Isaac", "0123456789"],
+        "Dirac": ["Paul", "Pauli", "0123456789"],
+        "Bohr": ["Niels", "0123456789"]
+    }
+}
