@@ -1,9 +1,42 @@
-### 1. Extract the group chat from WhatsApp
+# WhatsApp Data Extraction
 This only works on Android, iOS users - I can't help you :/
 
-TODO
+## 1. Extracting a backup
+The following steps were copied and modified from [this guide](https://gist.github.com/TraceM171/0e6bd8f930cddb5e468e9e6d0460d22a#gistcomment-5667561).
 
-### 2. Open the WhatsApp file using a SQLite explorer
-For example using Sqlitebrowser.
+1. **Open WhatsApp** on an Android phone that contains all the messages you want to extract.
+2. Go to **Backup Settings**:
+   - Navigate to `Settings -> Chats -> Chat backup` (path may vary in future versions of WhatsApp).
+3. **Manage End-to-End Encrypted Backup**:
+   - If backup encryption is **disabled**, proceed to Step 4.
+   - If encryption with a **password** is enabled, disable it and proceed to Step 4.
+   - If encryption with a **64-digit encryption key** is enabled and you **don’t know the key**, disable it and proceed to Step 4.
+   - If encryption with a **64-digit encryption key** is enabled and you **know the key**, proceed to Step 5.
+4. **Enable Backup Encryption**:
+   - Choose to use a **64-digit encryption key**.
+   - After the key is generated, **take note of it**, as it will be needed later.
+   - Then choose to create a backup and wait until it's done
+5. **Extract WhatsApp Data from your File System**:
+   - Locate the `WhatsApp/Databases` folder on your Android phone, it's probably under `/Android/media/com.whatsapp/WhatsApp/Databases/`
+   - In that folder you will find `msgstore.db.crypt15`, download it and send it to your computer 
+8. **Decrypt the Encrypted Files**:
+   - Use the encrypted `.crypt15` files and the 64-digit encryption key with the tool [wa-crypt-tools](https://github.com/ElDavoo/wa-crypt-tools).
+   - Example command:
+     ```bash
+     wadecrypt <64digitkey> msgstore.db.crypt15 msgstore.db
+     ```
+   - You know have a ``msgstore.db`` SQLite file with all your chat data!
 
-### 3. Locate the "groups" 
+## 2. Exporting the chat group data
+In this step you will locate the actual group-chat within your ``msgstore.db`` file and export it to .csv. To do so follow these steps:
+- download [sqlitebrowser](https://sqlitebrowser.org/) or any other database explorer
+- open your ``msgstore.db`` file
+- open the ``chat`` table and filter for your groups name in the "subject" column
+- once found, take note of the ``_id`` column, this is the group chats ID on your phone
+- open the ``messages`` table and filter the ``chat_row_id`` column for the ``_id`` of your group chat
+- then you should only have messages from that group and you can click the icon for "Save table as currently displayed" -> "Export to CSV"
+
+Done!
+
+## 3. Mapping JIDs to member names
+Every row in the resulting CSV file is a message and has a ``sender_jid_row_id`` column. Each user corresponds to one OR MORE of those IDs. I currently don't have a great way to automatically map this so you need to go through the messages in the CSV (or easier: In the sqlitebrowser) and take note with user corresponds to which JID(s). Write that down somewhere as it's needed later.
