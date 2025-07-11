@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  wa-group-viz:
+    image: wa-group-viz
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./data/config.json:/app/data/config.json
+      - ./data/group-chat.csv:/app/data/group-chat.csv
+    restart: unless-stopped
