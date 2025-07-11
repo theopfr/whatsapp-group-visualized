@@ -105,3 +105,30 @@ docker-compose up
 ```
 
 Then open http://localhost:8050 in your browser.
+
+
+## Sentiment Analysis
+Supported languages: English and German. If you chat in another language these plots won't make much sense unfortunately but you can enhance this script to support your lanuage if possible (for example using HuggingFace models).
+
+In order to show plots regarding sentiment, you need to run the ``src/sentiment_analysis.py`` script on your ``data/group-chat.csv``.
+For that you should follow the instructions above for the local setup. Once set up you can run the script:
+
+```bash
+python src/sentiment_analysis.py --language english
+```
+
+Full usage description of the script:
+```
+usage: sentiment_analysis.py [-h] [--language {english,german}] [--input INPUT] [--output OUTPUT]
+
+Sentiment analysis of chat data.
+
+options:
+  -h, --help            show this help message and exit
+  --language            {english,german}, default: english
+                        Language of the text data
+  --input INPUT         Path to input CSV file, default: ./data/group-chat.csv
+  --output OUTPUT       Path to output CSV file default: ./data/group-chat-sentiments.csv
+```
+
+This will create new .csv ``./data/group-chat-sentiments.csv``. You can rename it to ``group-chat.csv`` and use that file from now on. Once done, you will have two more plots in the dashboards showing the sentiment information.
