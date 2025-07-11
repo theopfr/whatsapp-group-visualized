@@ -5,12 +5,12 @@ A simple Plotly dashboard for visualizing your WhatsApp group chat patterns.
 ---
 
 ## ✨ Showcase
-Supported plots:
-- Message volume per person
-- Active days
-- Mentions
-- Group trends over time
-- Sentiments analysis
+- Message counts and average message length per user
+- Monthly and weekly activity visualizations
+- Mentions and direct mentions heatmaps
+- Top emojis and emoji usage over time
+- Sentiment analysis (optional if data is available)
+- Media usage stats
 
 <p align="center">
   <img src="./examples/example1.png" />
